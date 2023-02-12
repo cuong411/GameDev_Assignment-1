@@ -1,6 +1,7 @@
 import pygame
 import os
 import random
+import array as arr
 
 from os import path
 from pygame.locals import *
@@ -20,23 +21,33 @@ FPS = 60
 BG = (17, 166, 41)
 COL = 3
 ROW = 3
-
+NUM_ZOMBIE = 9
 mouse_pos = (0, 0)
 cursor = whack1
 
+# define zombie
+class zombie:
+    def __init__(self):
+        self.exist = 0
+        self.x = 0
+        self.y = 0
+        self.pos_x = 0
+        self.pos_y = 0
+
 # function
 def draw_dirt():
-    x,y = 0,0
+    x, y = 0, 0
     for row in range(ROW):
         x = 0
         for cal in range(COL):
-            #screen.blit(zb, (x * 200 + 150, y * 200 + 35))
+            screen.blit(zb, (x * 200 + 150, y * 200 + 35))
             screen.blit(dirt, (x * 200 + 115, y * 200 + 120))
             x += 1
         y += 1
 
 def zombie_generator():
-    
+    i = random.randint(0, NUM_ZOMBIE - 1)
+
 
 pygame.init()
 
